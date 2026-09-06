@@ -207,37 +207,38 @@
 </head>
 <body>
 
-  <!-- ==================== TOP ANNOUNCEMENT BAR (ADS & CONVERSIONS) ==================== -->
-  <div class="announcement-bar" role="banner">
-    ⚡ Karachi's #1 Hybrid Car Specialist • 5-Year Official Warranty • Free Doorstep Home Installation Karachi Wide • <a href="tel:+923082282777" data-track="call-header">📞 Call: 0308-2282777</a>
-  </div>
-
-  <!-- ==================== NAVIGATION ==================== -->
-  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
-    <div class="container">
-      <a href="#" class="logo" id="site-logo" aria-label="SK Hybrid Battery – Home">
-        <div class="logo-icon">⚡</div>
-        SK<span>Hybrid</span>
-      </a>
-
-      <div class="nav-links" id="nav-links" role="menubar">
-        <a href="#services" role="menuitem" class="active">Services</a>
-        <a href="#quote-calculator" role="menuitem">Get Quote</a>
-        <a href="#products" role="menuitem">Batteries</a>
-        <a href="#features" role="menuitem">Why Us</a>
-        <a href="#reviews" role="menuitem">Reviews</a>
-        <a href="#faq" role="menuitem">FAQ</a>
-        <a href="#contact" role="menuitem">Contact</a>
-        <a href="https://wa.me/923082282777" class="nav-cta" role="menuitem" target="_blank" rel="noopener" data-track="whatsapp-nav">📞 Get Quote</a>
-      </div>
-
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+  <!-- ==================== HEADER (ANNOUNCEMENT + NAVBAR) ==================== -->
+  <header class="site-header" id="site-header">
+    <div class="announcement-bar" role="banner">
+      ⚡ Karachi's #1 Hybrid Car Specialist • 5-Year Official Warranty • Free Doorstep Home Installation Karachi Wide • <a href="tel:+923082282777" data-track="call-header">📞 Call: 0308-2282777</a>
     </div>
-  </nav>
+
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+      <div class="container">
+        <a href="#" class="logo" id="site-logo" aria-label="SK Hybrid Battery – Home">
+          <div class="logo-icon">⚡</div>
+          SK<span>Hybrid</span>
+        </a>
+
+        <div class="nav-links" id="nav-links" role="menubar">
+          <a href="#services" role="menuitem" class="active">Services</a>
+          <a href="#quote-calculator" role="menuitem">Get Quote</a>
+          <a href="#products" role="menuitem">Batteries</a>
+          <a href="#features" role="menuitem">Why Us</a>
+          <a href="#reviews" role="menuitem">Reviews</a>
+          <a href="#faq" role="menuitem">FAQ</a>
+          <a href="#contact" role="menuitem">Contact</a>
+          <a href="https://wa.me/923082282777" class="nav-cta" role="menuitem" target="_blank" rel="noopener" data-track="whatsapp-nav">📞 Get Quote</a>
+        </div>
+
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
   <div class="nav-overlay" id="nav-overlay"></div>
 
   <!-- ==================== HERO ==================== -->
@@ -993,12 +994,14 @@
   <!-- ==================== SCRIPTS ==================== -->
   <script>
     // === Navbar Scroll Effect ===
+    const siteHeader = document.getElementById('site-header');
     const navbar = document.getElementById('navbar');
     const scrollTopBtn = document.getElementById('scroll-top');
 
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
-      navbar.classList.toggle('scrolled', y > 60);
+      if (siteHeader) siteHeader.classList.toggle('scrolled', y > 60);
+      if (navbar) navbar.classList.toggle('scrolled', y > 60);
       scrollTopBtn.classList.toggle('visible', y > 500);
     });
 
