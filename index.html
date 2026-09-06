@@ -39,18 +39,40 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Schema.org Structured Data -->
+  <!-- Google Ads & Conversion Tracking Infrastructure -->
+  <!-- When you get your Google Ads ID, simply replace AW-CONVERSION_ID with your ID (e.g., AW-1122334455) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-CONVERSION_ID');
+
+    function trackAdConversion(type, label) {
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-CONVERSION_ID/' + type,
+          'event_category': 'Leads',
+          'event_label': label || 'SK Hybrid Contact'
+        });
+      }
+    }
+  </script>
+
+  <!-- Schema.org Structured Data (LocalBusiness, AutoRepair & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
+        "@type": ["LocalBusiness", "AutoRepair"],
         "@id": "https://skhybridbattery.pk/#business",
         "name": "SK Hybrid Battery Karachi",
-        "description": "Karachi's #1 hybrid battery replacement center. Genuine A+ grade batteries for all hybrid cars with 5-year warranty and free home service.",
+        "description": "Karachi's #1 hybrid battery replacement & ABS repair center. Genuine A+ grade batteries for all hybrid cars with 5-year warranty and free home service.",
         "url": "https://skhybridbattery.pk",
         "telephone": "+92-308-2282777",
+        "priceRange": "PKR 50,000 - 350,000",
+        "image": "https://skhybridbattery.pk/images/hero-battery.png",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "26th Street, Badar Commercial Area, Defence Phase 5",
@@ -64,8 +86,23 @@
           "longitude": 67.047952
         },
         "hasMap": "https://maps.google.com/?q=24.799278,67.047952",
-        "areaServed": "Karachi",
-        "priceRange": "$$",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "348",
+          "bestRating": "5"
+        },
+        "areaServed": [
+          "DHA Karachi",
+          "Clifton",
+          "Gulshan-e-Iqbal",
+          "PECHS",
+          "North Nazimabad",
+          "Gulistan-e-Johar",
+          "Malir Cantt",
+          "Bahria Town Karachi",
+          "Karachi"
+        ],
         "openingHoursSpecification": {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
@@ -80,7 +117,7 @@
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Hybrid Battery Replacement",
+                "name": "Hybrid Battery Replacement Karachi",
                 "description": "A+ grade genuine battery replacement for all hybrid cars with 5-year warranty"
               }
             },
@@ -88,7 +125,7 @@
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "ABS System Repair",
+                "name": "ABS System Repair Karachi",
                 "description": "Complete ABS diagnostics and repair for hybrid and conventional vehicles"
               }
             },
@@ -96,8 +133,8 @@
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Home Battery Replacement",
-                "description": "Free doorstep battery replacement service across Karachi"
+                "name": "Doorstep Home Battery Replacement",
+                "description": "Free doorstep battery replacement service across all areas of Karachi"
               }
             }
           ]
@@ -105,6 +142,52 @@
         "sameAs": [
           "https://www.facebook.com/skhybridbattery",
           "https://www.instagram.com/skhybridbattery"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://skhybridbattery.pk/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How long is the hybrid battery warranty and what does it cover?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All our hybrid battery replacements come with an industry-leading 5-year official written warranty covering complete battery performance, individual cell voltage balance, and zero defect guarantee across Karachi."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you provide home doorstep hybrid battery replacement in Karachi?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, we provide 100% free doorstep hybrid battery installation anywhere in Karachi including DHA, Clifton, Gulshan-e-Iqbal, PECHS, and North Nazimabad. Our mobile diagnostic unit comes directly to your home or office."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between a Lithium battery upgrade and NiMH battery?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Lithium batteries are up to 60% lighter, dissipate heat much better in Karachi's hot weather, deliver 20-30% improved fuel average, and offer a longer lifespan compared to older NiMH technology."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you fix ABS warning lights and brake accumulator issues for hybrid cars?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, we are Karachi's leading ABS specialists. We provide computerized diagnostics, brake booster module repair, pump actuator replacement, and electronic calibration for Aqua, Prius, Vezel, Axio, and all other hybrids."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is your workshop located in Karachi?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our workshop is located at 26th Street, Badar Commercial Area, Defence Phase 5, Karachi. You can visit us directly or book doorstep service."
+            }
+          }
         ]
       },
       {
@@ -124,6 +207,11 @@
 </head>
 <body>
 
+  <!-- ==================== TOP ANNOUNCEMENT BAR (ADS & CONVERSIONS) ==================== -->
+  <div class="announcement-bar" role="banner">
+    ⚡ Karachi's #1 Hybrid Car Specialist • 5-Year Official Warranty • Free Doorstep Home Installation Karachi Wide • <a href="tel:+923082282777" data-track="call-header">📞 Call: 0308-2282777</a>
+  </div>
+
   <!-- ==================== NAVIGATION ==================== -->
   <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
     <div class="container">
@@ -134,11 +222,13 @@
 
       <div class="nav-links" id="nav-links" role="menubar">
         <a href="#services" role="menuitem" class="active">Services</a>
+        <a href="#quote-calculator" role="menuitem">Get Quote</a>
         <a href="#products" role="menuitem">Batteries</a>
         <a href="#features" role="menuitem">Why Us</a>
         <a href="#reviews" role="menuitem">Reviews</a>
+        <a href="#faq" role="menuitem">FAQ</a>
         <a href="#contact" role="menuitem">Contact</a>
-        <a href="https://wa.me/923082282777" class="nav-cta" role="menuitem" target="_blank" rel="noopener">📞 Get Quote</a>
+        <a href="https://wa.me/923082282777" class="nav-cta" role="menuitem" target="_blank" rel="noopener" data-track="whatsapp-nav">📞 Get Quote</a>
       </div>
 
       <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -161,22 +251,22 @@
       <div class="hero-content">
         <div class="hero-badge">
           <span class="hero-badge-dot"></span>
-          Karachi's #1 Hybrid Battery Center
+          Karachi's #1 Hybrid Battery & ABS Center
         </div>
 
         <h1>
           Premium <span class="highlight">Hybrid Battery</span>
-          Replacement & ABS Repair
+          Replacement & ABS Repair in Karachi
         </h1>
 
-        <p>We replace batteries for all hybrid cars in Pakistan. Genuine A+ grade imported batteries with an industry-leading 5-year warranty. Free home service across Karachi.</p>
+        <p>100% Genuine Japanese A+ Grade Cells with an <strong>Industry-Leading 5-Year Warranty</strong>. We service Toyota Aqua, Prius, Vezel, Axio, Note e-POWER, Camry & all hybrid vehicles. <strong>Free doorstep installation across Karachi.</strong></p>
 
         <div class="hero-actions">
-          <a href="https://wa.me/923082282777?text=Hi%2C%20I%20need%20a%20hybrid%20battery%20quote" class="btn btn-primary" id="hero-cta-whatsapp" target="_blank" rel="noopener">
-            💬 WhatsApp Now
+          <a href="https://wa.me/923082282777?text=Hi%20SK%20Hybrid%20Battery%2C%20I%20need%20a%20quote%20for%20my%20hybrid%20car%20in%20Karachi" class="btn btn-primary" id="hero-cta-whatsapp" target="_blank" rel="noopener" data-track="whatsapp-hero">
+            💬 WhatsApp Now (Instant Quote)
           </a>
-          <a href="#products" class="btn btn-secondary" id="hero-cta-products">
-            View Batteries →
+          <a href="tel:+923082282777" class="btn btn-secondary" id="hero-cta-call" data-track="call-hero">
+            📞 Call 0308-2282777
           </a>
         </div>
 
@@ -187,7 +277,7 @@
           </div>
           <div class="stat-item">
             <div class="stat-number">5<span class="accent">yr</span></div>
-            <div class="stat-label">Battery Warranty</div>
+            <div class="stat-label">Official Warranty</div>
           </div>
           <div class="stat-item">
             <div class="stat-number">All<span class="accent"></span></div>
@@ -199,6 +289,106 @@
       <div class="hero-image">
         <img src="images/battery-service.png" alt="Professional hybrid battery installation at your doorstep in Karachi" width="1024" height="1024" loading="eager">
       </div>
+    </div>
+  </section>
+
+  <!-- ==================== TRUST BADGES BAR ==================== -->
+  <div class="trust-bar" aria-label="Key Guarantees">
+    <div class="container">
+      <div class="trust-badges-grid">
+        <div class="trust-badge-item">
+          <div class="trust-badge-icon">🛡️</div>
+          <div class="trust-badge-text">
+            <strong>5-Year Official Warranty</strong>
+            <span>100% Written Guarantee</span>
+          </div>
+        </div>
+        <div class="trust-badge-item">
+          <div class="trust-badge-icon">🇯🇵</div>
+          <div class="trust-badge-text">
+            <strong>Genuine A+ Grade Cells</strong>
+            <span>Zero refurbished cells used</span>
+          </div>
+        </div>
+        <div class="trust-badge-item">
+          <div class="trust-badge-icon">🏠</div>
+          <div class="trust-badge-text">
+            <strong>Free Doorstep Service</strong>
+            <span>Any area in Karachi</span>
+          </div>
+        </div>
+        <div class="trust-badge-item">
+          <div class="trust-badge-icon">⚡</div>
+          <div class="trust-badge-text">
+            <strong>60-Min Fast Turnaround</strong>
+            <span>Express installation & testing</span>
+          </div>
+        </div>
+        <div class="trust-badge-item">
+          <div class="trust-badge-icon">💻</div>
+          <div class="trust-badge-text">
+            <strong>Computerized Diagnostic</strong>
+            <span>Free health & ABS check</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== INSTANT QUOTE CALCULATOR (HIGH-CONVERTING LEAD WIDGET) ==================== -->
+  <section class="container" id="quote-calculator" style="position: relative; z-index: 10;">
+    <div class="quote-calc-wrapper reveal">
+      <div class="quote-calc-header">
+        <div class="section-label" style="margin-bottom: 0.5rem;">Fast Estimate</div>
+        <h3>⚡ Get Instant Hybrid Battery & ABS Quote</h3>
+        <p>Select your hybrid model and service for immediate pricing and technician availability on WhatsApp.</p>
+      </div>
+
+      <form class="quote-form-grid" id="fastQuoteForm" onsubmit="handleQuoteSubmit(event)">
+        <div class="quote-field">
+          <label for="calc-car">1. Select Your Car</label>
+          <select id="calc-car" class="quote-select" required>
+            <option value="Toyota Aqua">Toyota Aqua (NHP10)</option>
+            <option value="Toyota Prius">Toyota Prius (Gen 2, 3, 4, Alpha)</option>
+            <option value="Honda Vezel / Fit">Honda Vezel / Fit e:HEV</option>
+            <option value="Toyota Corolla Axio / Fielder">Toyota Axio / Fielder Hybrid</option>
+            <option value="Nissan Note e-POWER">Nissan Note e-POWER</option>
+            <option value="Toyota Camry / Crown">Toyota Camry / Crown Hybrid</option>
+            <option value="Toyota C-HR / Corolla Cross">Toyota C-HR / Corolla Cross</option>
+            <option value="Other Hybrid Car">Other Hybrid / Japanese Import</option>
+          </select>
+        </div>
+
+        <div class="quote-field">
+          <label for="calc-service">2. Select Service</label>
+          <select id="calc-service" class="quote-select" required>
+            <option value="Hybrid Battery Replacement (5-Year Warranty)">Battery Replacement (5-Yr Warranty)</option>
+            <option value="Lithium Battery Upgrade">Lithium Battery Upgrade</option>
+            <option value="ABS System Repair / Warning Lights">ABS System Repair & Calibration</option>
+            <option value="Hybrid System Health Diagnostic">Hybrid Computer Diagnostic</option>
+            <option value="Doorstep Home Installation">Free Doorstep Home Service</option>
+          </select>
+        </div>
+
+        <div class="quote-field">
+          <label for="calc-area">3. Your Karachi Area</label>
+          <select id="calc-area" class="quote-select" required>
+            <option value="DHA / Clifton">DHA / Clifton</option>
+            <option value="Gulshan-e-Iqbal">Gulshan-e-Iqbal</option>
+            <option value="PECHS / Tariq Road">PECHS / Tariq Road</option>
+            <option value="North Nazimabad">North Nazimabad</option>
+            <option value="Gulistan-e-Johar">Gulistan-e-Johar</option>
+            <option value="Malir Cantt / Model Colony">Malir Cantt / Model Colony</option>
+            <option value="Federal B Area">Federal B Area</option>
+            <option value="Bahria Town Karachi">Bahria Town Karachi</option>
+            <option value="Other Area in Karachi">Other Karachi Area</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-calc-submit" id="btn-submit-calc" data-track="quote-calculator-submit">
+          💬 Get WhatsApp Quote ⚡
+        </button>
+      </form>
     </div>
   </section>
 
@@ -306,7 +496,7 @@
             </div>
             <div class="product-meta">
               <span class="product-price">Call for Price</span>
-              <button class="product-cta" id="btn-aqua-quote" onclick="window.open('https://wa.me/923082282777?text=Hi%2C%20I%20need%20a%20Toyota%20Aqua%20battery%20quote%20in%20Karachi','_blank')">Get Quote</button>
+              <button class="product-cta" id="btn-aqua-quote" data-track="product-aqua-quote" onclick="window.open('https://wa.me/923082282777?text=Hi%2C%20I%20need%20a%20Toyota%20Aqua%20battery%20quote%20in%20Karachi','_blank')">Get Quote</button>
             </div>
           </div>
         </article>
@@ -327,7 +517,7 @@
             </div>
             <div class="product-meta">
               <span class="product-price">Call for Price</span>
-              <button class="product-cta" id="btn-prius-quote" onclick="window.open('https://wa.me/923082282777?text=Hi%2C%20I%20need%20a%20Toyota%20Prius%20battery%20quote%20in%20Karachi','_blank')">Get Quote</button>
+              <button class="product-cta" id="btn-prius-quote" data-track="product-prius-quote" onclick="window.open('https://wa.me/923082282777?text=Hi%2C%20I%20need%20a%20Toyota%20Prius%20battery%20quote%20in%20Karachi','_blank')">Get Quote</button>
             </div>
           </div>
         </article>
@@ -348,7 +538,7 @@
             </div>
             <div class="product-meta">
               <span class="product-price">Call for Price</span>
-              <button class="product-cta" id="btn-vezel-quote" onclick="window.open('https://wa.me/923082282777?text=Hi%2C%20I%20need%20a%20Honda%20Vezel%20battery%20quote%20in%20Karachi','_blank')">Get Quote</button>
+              <button class="product-cta" id="btn-vezel-quote" data-track="product-vezel-quote" onclick="window.open('https://wa.me/923082282777?text=Hi%2C%20I%20need%20a%20Honda%20Vezel%20battery%20quote%20in%20Karachi','_blank')">Get Quote</button>
             </div>
           </div>
         </article>
@@ -369,7 +559,7 @@
             </div>
             <div class="product-meta">
               <span class="product-price">Call for Price</span>
-              <button class="product-cta" id="btn-axio-quote" onclick="window.open('https://wa.me/923082282777?text=Hi%2C%20I%20need%20a%20Toyota%20Axio%20hybrid%20battery%20quote%20in%20Karachi','_blank')">Get Quote</button>
+              <button class="product-cta" id="btn-axio-quote" data-track="product-axio-quote" onclick="window.open('https://wa.me/923082282777?text=Hi%2C%20I%20need%20a%20Toyota%20Axio%20hybrid%20battery%20quote%20in%20Karachi','_blank')">Get Quote</button>
             </div>
           </div>
         </article>
@@ -390,7 +580,7 @@
             </div>
             <div class="product-meta">
               <span class="product-price">Call for Price</span>
-              <button class="product-cta" id="btn-note-quote" onclick="window.open('https://wa.me/923082282777?text=Hi%2C%20I%20need%20a%20Nissan%20Note%20e-POWER%20battery%20quote%20in%20Karachi','_blank')">Get Quote</button>
+              <button class="product-cta" id="btn-note-quote" data-track="product-note-quote" onclick="window.open('https://wa.me/923082282777?text=Hi%2C%20I%20need%20a%20Nissan%20Note%20e-POWER%20battery%20quote%20in%20Karachi','_blank')">Get Quote</button>
             </div>
           </div>
         </article>
@@ -411,7 +601,7 @@
             </div>
             <div class="product-meta">
               <span class="product-price">Call for Price</span>
-              <button class="product-cta" id="btn-camry-quote" onclick="window.open('https://wa.me/923082282777?text=Hi%2C%20I%20need%20a%20Toyota%20Camry%20hybrid%20battery%20quote%20in%20Karachi','_blank')">Get Quote</button>
+              <button class="product-cta" id="btn-camry-quote" data-track="product-camry-quote" onclick="window.open('https://wa.me/923082282777?text=Hi%2C%20I%20need%20a%20Toyota%20Camry%20hybrid%20battery%20quote%20in%20Karachi','_blank')">Get Quote</button>
             </div>
           </div>
         </article>
@@ -432,7 +622,7 @@
             </div>
             <div class="product-meta">
               <span class="product-price">Call for Price</span>
-              <button class="product-cta" id="btn-other-quote" onclick="window.open('https://wa.me/923082282777?text=Hi%2C%20I%20need%20a%20hybrid%20battery%20quote%20in%20Karachi','_blank')">Get Quote</button>
+              <button class="product-cta" id="btn-other-quote" data-track="product-other-quote" onclick="window.open('https://wa.me/923082282777?text=Hi%2C%20I%20need%20a%20hybrid%20battery%20quote%20in%20Karachi','_blank')">Get Quote</button>
             </div>
           </div>
         </article>
@@ -548,6 +738,104 @@
     </div>
   </section>
 
+  <!-- ==================== FAQ SECTION (FOR RICH SNIPPETS & AD QUALITY SCORE) ==================== -->
+  <section class="section" id="faq" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Frequently Asked Questions</div>
+        <h2>Common Questions About Hybrid Batteries in Karachi</h2>
+        <p>Everything you need to know about hybrid battery replacement, warranty, prices, and ABS repair.</p>
+      </div>
+
+      <div class="faq-grid reveal">
+        <div class="faq-item active">
+          <button class="faq-question" aria-expanded="true">
+            <span>How long is your warranty and what does it cover?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We provide an industry-leading <strong>5-Year Official Written Warranty</strong> on all our hybrid battery replacements. It covers individual cell voltage balancing, overall battery pack performance, and any internal manufacturing defect. If any issue arises, our mobile team repairs or replaces it free of charge.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do you offer free doorstep battery replacement in Karachi?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! We provide <strong>100% free home doorstep service</strong> across all neighborhoods in Karachi — including DHA (Phases 1–8), Clifton, Gulshan-e-Iqbal, PECHS, North Nazimabad, Malir Cantt, and beyond. Our mobile van carries full computerized diagnostic equipment to install and test the battery at your home or office.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What is the difference between a Lithium Upgrade and standard NiMH battery?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Lithium batteries are modern generation packs that are <strong>up to 60% lighter</strong>, run substantially cooler in Karachi's intense summer heat, and deliver a <strong>20% to 30% improvement in fuel economy</strong> (up to 30-34 km/L on Aqua). Standard NiMH batteries are reliable OEM replacements. Both options come with our complete 5-year warranty.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can you fix ABS warning lights and brake accumulator issues?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. ABS failure (hard brake pedal, continuous motor buzzing, or ABS/VSC warning lights on dashboard) is a very common issue in Toyota Aqua, Prius, and Honda Vezel. We specialize in ABS pump rebuilding, accumulator module replacement, electronic sensor calibration, and brake bleeding.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How long does the replacement process take?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>A complete hybrid battery replacement typically takes <strong>45 to 90 minutes</strong>. This includes complete safe disconnection of the high-voltage system, professional installation of the new pack, cooling fan cleaning, and comprehensive OBD2 computer diagnostic scans.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Where is your workshop located in Karachi?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Our workshop is conveniently located at <strong>26th Street, Badar Commercial Area, Defence Phase 5, Karachi</strong>. You are welcome to drive in for a free computer diagnostic scan, or call us at <strong>0308-2282777</strong> to schedule a home visit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== KARACHI LOCAL SERVICE AREAS ==================== -->
+  <section class="areas-section" id="service-areas">
+    <div class="container text-center reveal" style="text-align: center;">
+      <div class="section-label">Karachi-Wide Coverage</div>
+      <h3 style="font-size: 1.5rem; color: var(--text-primary); margin-bottom: 0.5rem;">Free Doorstep Hybrid Battery Service Across Karachi</h3>
+      <p style="font-size: 0.9rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">Our certified mobile technicians come to your doorstep anywhere in Karachi with diagnostic scanners and fresh battery packs:</p>
+
+      <div class="areas-container">
+        <div class="area-badge"><span>✓</span> DHA Phase 1 to 8</div>
+        <div class="area-badge"><span>✓</span> Clifton (Blocks 1–9)</div>
+        <div class="area-badge"><span>✓</span> Gulshan-e-Iqbal</div>
+        <div class="area-badge"><span>✓</span> PECHS & Tariq Road</div>
+        <div class="area-badge"><span>✓</span> North Nazimabad</div>
+        <div class="area-badge"><span>✓</span> Gulistan-e-Johar</div>
+        <div class="area-badge"><span>✓</span> Bahadurabad & Dhoraji</div>
+        <div class="area-badge"><span>✓</span> Malir Cantt & Model Colony</div>
+        <div class="area-badge"><span>✓</span> Federal B Area</div>
+        <div class="area-badge"><span>✓</span> KDA Scheme 1</div>
+        <div class="area-badge"><span>✓</span> Scheme 33</div>
+        <div class="area-badge"><span>✓</span> Bahria Town Karachi</div>
+        <div class="area-badge"><span>✓</span> All Other Karachi Areas</div>
+      </div>
+    </div>
+  </section>
+
   <!-- ==================== CONTACT / CTA ==================== -->
   <section class="section locations" id="contact">
     <div class="container">
@@ -611,7 +899,7 @@
       <div class="cta-banner reveal" id="cta-section">
         <h2>Ready to Power Up Your Hybrid?</h2>
         <p>Get a free quote today. We offer home battery replacement, ABS repair, and diagnostics anywhere in Karachi — with a 5-year warranty.</p>
-        <a href="https://wa.me/923082282777?text=Hi%2C%20I%20want%20a%20free%20hybrid%20battery%20quote%20in%20Karachi" class="btn" id="cta-whatsapp" target="_blank" rel="noopener">
+        <a href="https://wa.me/923082282777?text=Hi%2C%20I%20want%20a%20free%20hybrid%20battery%20quote%20in%20Karachi" class="btn" id="cta-whatsapp" target="_blank" rel="noopener" data-track="cta-banner-whatsapp">
           💬 Chat on WhatsApp
         </a>
       </div>
@@ -677,12 +965,30 @@
   </footer>
 
   <!-- ==================== WHATSAPP FLOAT ==================== -->
-  <a href="https://wa.me/923082282777?text=Hi%2C%20I%20need%20help%20with%20my%20hybrid%20battery%20in%20Karachi" class="whatsapp-float" id="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <a href="https://wa.me/923082282777?text=Hi%2C%20I%20need%20help%20with%20my%20hybrid%20battery%20in%20Karachi" class="whatsapp-float" id="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" data-track="whatsapp-float">
     💬
   </a>
 
   <!-- ==================== SCROLL TO TOP ==================== -->
   <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">↑</button>
+
+  <!-- ==================== STICKY MOBILE CONVERSION BAR (GOOGLE ADS CRO) ==================== -->
+  <div class="mobile-action-bar" role="navigation" aria-label="Mobile Quick Actions">
+    <div class="mobile-action-bar-inner">
+      <a href="tel:+923082282777" class="mobile-action-btn btn-call" data-track="mobile-bar-call">
+        <span class="btn-icon">📞</span>
+        <span>Call Now</span>
+      </a>
+      <a href="https://wa.me/923082282777?text=Hi%20SK%20Hybrid%20Battery%2C%20I%20need%20a%20quote%20for%20my%20hybrid%20car%20in%20Karachi" target="_blank" rel="noopener" class="mobile-action-btn btn-whatsapp" data-track="mobile-bar-whatsapp">
+        <span class="btn-icon">💬</span>
+        <span>WhatsApp Quote</span>
+      </a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=24.799278,67.047952" target="_blank" rel="noopener" class="mobile-action-btn btn-directions" data-track="mobile-bar-directions">
+        <span class="btn-icon">📍</span>
+        <span>Directions</span>
+      </a>
+    </div>
+  </div>
 
   <!-- ==================== SCRIPTS ==================== -->
   <script>
@@ -765,6 +1071,55 @@
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
+
+    // === Instant Quote Calculator Handler ===
+    function handleQuoteSubmit(event) {
+      event.preventDefault();
+      const car = document.getElementById('calc-car').value;
+      const service = document.getElementById('calc-service').value;
+      const area = document.getElementById('calc-area').value;
+
+      const message = `Hi SK Hybrid Battery! I need an instant quote for my ${car}.%0A- Service: ${service}%0A- Location: ${area}, Karachi%0A%0APlease share pricing and availability.`;
+      const whatsappUrl = `https://wa.me/923082282777?text=${message}`;
+
+      // Fire conversion tracking
+      if (typeof trackAdConversion === 'function') {
+        trackAdConversion('quote_calculator_submit', `${car} | ${service} | ${area}`);
+      }
+
+      window.open(whatsappUrl, '_blank', 'noopener');
+    }
+
+    // === FAQ Accordion Toggle ===
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        const isActive = item.classList.contains('active');
+
+        // Close all other items
+        document.querySelectorAll('.faq-item').forEach(other => {
+          other.classList.remove('active');
+          other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        // Toggle current item
+        if (!isActive) {
+          item.classList.add('active');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // === Automatic Google Ads Event Tracking for all Data-Track Elements ===
+    document.querySelectorAll('[data-track]').forEach(el => {
+      el.addEventListener('click', () => {
+        const actionType = el.getAttribute('data-track');
+        const label = el.innerText.trim() || el.getAttribute('title') || 'Interactive CTA';
+        if (typeof trackAdConversion === 'function') {
+          trackAdConversion(actionType, label);
+        }
+      });
+    });
   </script>
 </body>
 </html>
