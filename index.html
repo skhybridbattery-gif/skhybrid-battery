@@ -56,6 +56,21 @@
         });
       }
     }
+
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18432583532/qbc3CPTk2_UcEOzOq9VE',
+          'event_callback': callback
+        });
+      }
+      return false;
+    }
   </script>
 
   <!-- Schema.org Structured Data (LocalBusiness, AutoRepair & FAQPage) -->
