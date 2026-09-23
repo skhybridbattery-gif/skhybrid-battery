@@ -32,10 +32,10 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Self-hosted Inter font (variable, latin) — avoids the Google Fonts round trips -->
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Hero image is the LCP element: fetch it first -->
+  <link rel="preload" href="images/battery-service.webp" as="image" fetchpriority="high">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
@@ -253,7 +253,7 @@
   <!-- ==================== HERO ==================== -->
   <section class="hero" id="hero">
     <div class="hero-bg">
-      <img src="images/hero-battery.webp" alt="Hybrid car battery replacement service in Karachi" width="1024" height="1024" loading="eager">
+      <img src="images/hero-battery.webp" alt="Hybrid car battery replacement service in Karachi" width="800" height="800" loading="eager" fetchpriority="low">
     </div>
     <div class="hero-glow"></div>
 
@@ -297,7 +297,7 @@
       </div>
 
       <div class="hero-image">
-        <img src="images/battery-service.webp" alt="Professional hybrid battery installation at your doorstep in Karachi" width="1024" height="1024" loading="eager">
+        <img src="images/battery-service.webp" alt="Professional hybrid battery installation at your doorstep in Karachi" width="744" height="744" loading="eager" fetchpriority="high">
       </div>
     </div>
   </section>
@@ -651,7 +651,7 @@
 
       <div class="features-layout">
         <div class="features-image reveal">
-          <img src="images/abs-service.webp" alt="Expert technician servicing hybrid vehicle ABS system in Karachi" width="1024" height="1024" loading="lazy">
+          <img src="images/abs-service.webp" alt="Expert technician servicing hybrid vehicle ABS system in Karachi" width="744" height="744" loading="lazy">
         </div>
 
         <div class="features-list">
