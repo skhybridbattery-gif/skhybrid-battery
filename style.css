@@ -478,6 +478,188 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0.2rem;
 }
 
+/* ===== INNER PAGES (service / model / price pages) ===== */
+.page-hero {
+  padding: 8.5rem 0 3rem;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.page-hero h1 {
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  line-height: 1.15;
+  margin: 0.75rem 0 1rem;
+}
+
+.page-hero .lead {
+  color: var(--text-secondary);
+  max-width: 780px;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+
+.breadcrumb {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.prose {
+  max-width: 820px;
+}
+
+.prose h2 {
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  margin: 2.5rem 0 1rem;
+}
+
+.prose h3 {
+  font-size: 1.15rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.prose p,
+.prose li {
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.prose a {
+  color: var(--accent);
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  min-width: 600px;
+}
+
+a.product-price,
+a.service-link {
+  text-decoration: none;
+}
+
+.price-table th,
+.price-table td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.price-table th {
+  color: var(--text-primary);
+  background: var(--bg-card);
+  font-weight: 700;
+}
+
+.price-table td {
+  color: var(--text-secondary);
+}
+
+.price-table .price {
+  color: var(--accent);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.code-chip {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--accent);
+  padding: 0.12rem 0.5rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+.note-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-lg, 12px);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  color: var(--text-secondary);
+}
+
+.related-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.related-links a {
+  display: block;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg, 12px);
+  padding: 1rem 1.1rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.related-links a:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.related-links a span {
+  display: block;
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 600px) {
+  .page-hero {
+    padding: 7.5rem 0 2.25rem;
+  }
+
+  /* Short price/spec tables fit the phone screen instead of scrolling sideways */
+  .price-table.fit {
+    min-width: 0;
+    font-size: 0.8rem;
+  }
+
+  .price-table.fit th,
+  .price-table.fit td {
+    padding: 0.55rem 0.45rem;
+  }
+
+  .price-table.fit .price {
+    white-space: normal;
+  }
+
+}
+
 /* ===== SECTION COMMON ===== */
 .section {
   padding: var(--section-padding) 0;
@@ -1669,5 +1851,66 @@ h1, h2, h3, h4, h5, h6 {
   }
   .ab-full {
     display: none; /* shorter announcement text on phones (1–2 lines instead of 3) */
+  }
+}
+
+/* ===== PHONE POLISH (kept last so it overrides earlier rules) ===== */
+@media (max-width: 600px) {
+  /* ---- Touch targets: at least ~44px so buttons are easy to tap with a thumb ---- */
+  .mobile-toggle {
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .product-cta,
+  a.product-price {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .product-cta {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  a.service-link {
+    display: inline-block;
+    padding: 0.7rem 0;
+  }
+
+  .footer-social a {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Inline links: padding enlarges the tap area without changing the layout */
+  .announcement-bar a,
+  .breadcrumb a {
+    padding: 0.8rem 0.3rem;
+  }
+
+  .location-card > a {
+    padding: 0.7rem 0.3rem;
+  }
+
+  /* The ↑ button covered page text; phones scroll by swiping and have the bottom bar */
+  .scroll-top,
+  .scroll-top.visible {
+    display: none;
+  }
+
+  /* Smaller hero heading so the WhatsApp button fits on the first screen */
+  .hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 0.98rem;
+    margin-bottom: 1.5rem;
   }
 }
