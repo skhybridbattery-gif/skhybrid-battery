@@ -34,6 +34,11 @@
     gtag('js', new Date());
     gtag('config', 'AW-18432583532');
     function trackAdConversion(type, label) {
+      // Google Analytics 4: same clicks as named events (GA4 is loaded through the Ads Google tag)
+      if (typeof gtag === 'function' && type !== 'quote-calculator-submit') {
+        var gaEvent = /call/.test(type) ? 'click_call' : /direction/.test(type) ? 'click_directions' : type === 'quote_calculator_submit' ? 'quote_request' : 'click_whatsapp';
+        gtag('event', gaEvent, { send_to: 'G-RZLM8SD3V3', button_id: type, button_text: String(label || '').slice(0, 100) });
+      }
       if (typeof gtag === 'function') {
         gtag('event', 'conversion', { 'send_to': 'AW-18432583532/qbc3CPTk2_UcEOzOq9VE', 'event_category': 'Leads', 'event_label': label || 'SK Hybrid Contact' });
       }
