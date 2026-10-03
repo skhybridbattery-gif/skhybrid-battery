@@ -54,7 +54,7 @@
         var gaEvent = /call/.test(type) ? 'click_call' : /direction/.test(type) ? 'click_directions' : type === 'quote_calculator_submit' ? 'quote_request' : 'click_whatsapp';
         gtag('event', gaEvent, { send_to: 'G-RZLM8SD3V3', button_id: type, button_text: String(label || '').slice(0, 100) });
       }
-      if (typeof gtag === 'function') {
+      if (typeof gtag === 'function' && !/direction/.test(type)) { // Directions taps are not leads: GA4 only, not a Google Ads conversion
         gtag('event', 'conversion', {
           'send_to': 'AW-18432583532/qbc3CPTk2_UcEOzOq9VE',
           'event_category': 'Leads',
