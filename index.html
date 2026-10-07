@@ -36,10 +36,8 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Self-hosted Inter font (variable, latin) — avoids the Google Fonts round trips -->
-  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <!-- Hero image is the LCP element: fetch it first -->
-  <link rel="preload" href="images/battery-service.webp" as="image" fetchpriority="high">
+  <!-- Self-hosted Geist font (variable, latin) — avoids the Google Fonts round trips -->
+  <link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
@@ -248,13 +246,13 @@
   <!-- ==================== HEADER (ANNOUNCEMENT + NAVBAR) ==================== -->
   <header class="site-header" id="site-header">
     <div class="announcement-bar" role="banner">
-      ⚡ <span class="ab-full">Karachi's #1 Hybrid Car Specialist • </span>5-Year Official Warranty • Free Doorstep Home Installation<span class="ab-full"> Karachi Wide</span> • <a href="tel:+923082282777" data-track="call-header">📞 Call: 0308-2282777</a>
+      <span class="ic ic-bolt" aria-hidden="true"></span> <span class="ab-full">Karachi's #1 Hybrid Car Specialist • </span>5-Year Official Warranty • Free Doorstep Home Installation<span class="ab-full"> Karachi Wide</span> • <a href="tel:+923082282777" data-track="call-header"><span class="ic ic-phone" aria-hidden="true"></span> Call: 0308-2282777</a>
     </div>
 
     <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
       <div class="container">
         <a href="#" class="logo" id="site-logo" aria-label="SK Hybrid Battery – Home">
-          <div class="logo-icon">⚡</div>
+          <div class="logo-icon"><span class="ic ic-bolt" aria-hidden="true"></span></div>
           SK<span>Hybrid</span>
         </a>
 
@@ -266,7 +264,7 @@
           <a href="#reviews" role="menuitem">Reviews</a>
           <a href="#faq" role="menuitem">FAQ</a>
           <a href="#contact" role="menuitem">Contact</a>
-          <a href="https://wa.me/923082282777" class="nav-cta" role="menuitem" target="_blank" rel="noopener" data-track="whatsapp-nav">📞 Get Quote</a>
+          <a href="https://wa.me/923082282777" class="nav-cta" role="menuitem" target="_blank" rel="noopener" data-track="whatsapp-nav"><span class="ic ic-whatsapp" aria-hidden="true"></span> Get Quote</a>
         </div>
 
         <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -281,10 +279,6 @@
 
   <!-- ==================== HERO ==================== -->
   <section class="hero" id="hero">
-    <div class="hero-bg">
-      <img src="images/hero-battery.webp" alt="Hybrid car battery replacement service in Karachi" width="800" height="800" loading="eager" fetchpriority="low">
-    </div>
-    <div class="hero-glow"></div>
 
     <div class="container">
       <div class="hero-content">
@@ -302,10 +296,10 @@
 
         <div class="hero-actions">
           <a href="https://wa.me/923082282777?text=Hi%20SK%20Hybrid%20Battery%2C%20I%20need%20a%20quote%20for%20my%20hybrid%20car%20in%20Karachi" class="btn btn-primary" id="hero-cta-whatsapp" target="_blank" rel="noopener" data-track="whatsapp-hero">
-            💬 WhatsApp Now (Instant Quote)
+            <span class="ic ic-whatsapp" aria-hidden="true"></span> WhatsApp Now (Instant Quote)
           </a>
           <a href="tel:+923082282777" class="btn btn-secondary" id="hero-cta-call" data-track="call-hero">
-            📞 Call 0308-2282777
+            <span class="ic ic-phone" aria-hidden="true"></span> Call 0308-2282777
           </a>
         </div>
 
@@ -325,8 +319,25 @@
         </div>
       </div>
 
-      <div class="hero-image">
-        <img src="images/battery-service.webp" alt="Professional hybrid battery installation at your home doorstep in Karachi" width="744" height="744" loading="eager" fetchpriority="high">
+      <div class="hero-visual">
+        <aside class="scan-card" aria-label="Toyota Aqua hybrid battery pack check">
+          <div class="scan-head">
+            <span class="scan-title">Toyota Aqua pack scan</span>
+            <span class="scan-ok">All 20 modules OK</span>
+          </div>
+          <div class="scan-modules" aria-hidden="true">
+            <i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><i style="--i:5"></i><i style="--i:6"></i><i style="--i:7"></i><i style="--i:8"></i><i style="--i:9"></i><i style="--i:10"></i><i style="--i:11"></i><i style="--i:12"></i><i style="--i:13"></i><i style="--i:14"></i><i style="--i:15"></i><i style="--i:16"></i><i style="--i:17"></i><i style="--i:18"></i><i style="--i:19"></i>
+          </div>
+          <dl class="scan-reads">
+            <div><dt>Pack voltage</dt><dd>144 V</dd></div>
+            <div><dt>Japanese cells</dt><dd>A+</dd></div>
+            <div><dt>Written warranty</dt><dd>5 yrs</dd></div>
+          </dl>
+          <a href="/toyota-aqua-hybrid-battery-karachi/" class="scan-price">
+            <span>Aqua battery from</span>
+            <strong>PKR 80,000</strong>
+          </a>
+        </aside>
       </div>
     </div>
   </section>
@@ -336,35 +347,35 @@
     <div class="container">
       <div class="trust-badges-grid">
         <div class="trust-badge-item">
-          <div class="trust-badge-icon">🛡️</div>
+          <div class="trust-badge-icon"><span class="ic ic-shield" aria-hidden="true"></span></div>
           <div class="trust-badge-text">
             <strong>5-Year Official Warranty</strong>
             <span>100% Written Guarantee</span>
           </div>
         </div>
         <div class="trust-badge-item">
-          <div class="trust-badge-icon">🇯🇵</div>
+          <div class="trust-badge-icon"><span class="ic ic-badge" aria-hidden="true"></span></div>
           <div class="trust-badge-text">
             <strong>Genuine A+ Grade Cells</strong>
             <span>Zero refurbished cells used</span>
           </div>
         </div>
         <div class="trust-badge-item">
-          <div class="trust-badge-icon">🏠</div>
+          <div class="trust-badge-icon"><span class="ic ic-home" aria-hidden="true"></span></div>
           <div class="trust-badge-text">
             <strong>Free Doorstep Home Service</strong>
             <span>Any area in Karachi</span>
           </div>
         </div>
         <div class="trust-badge-item">
-          <div class="trust-badge-icon">⚡</div>
+          <div class="trust-badge-icon"><span class="ic ic-bolt" aria-hidden="true"></span></div>
           <div class="trust-badge-text">
             <strong>60-Min Fast Turnaround</strong>
             <span>Express installation & testing</span>
           </div>
         </div>
         <div class="trust-badge-item">
-          <div class="trust-badge-icon">💻</div>
+          <div class="trust-badge-icon"><span class="ic ic-scan" aria-hidden="true"></span></div>
           <div class="trust-badge-text">
             <strong>Computerized Diagnostic</strong>
             <span>Free health & ABS check</span>
@@ -379,7 +390,7 @@
     <div class="quote-calc-wrapper reveal">
       <div class="quote-calc-header">
         <div class="section-label" style="margin-bottom: 0.5rem;">Fast Estimate</div>
-        <h3>⚡ Get Instant Hybrid Battery & ABS Quote</h3>
+        <h3>Get Instant Hybrid Battery & ABS Quote</h3>
         <p>Select your hybrid model and service for immediate pricing and technician availability on WhatsApp.</p>
       </div>
 
@@ -425,7 +436,7 @@
         </div>
 
         <button type="submit" class="btn-calc-submit" id="btn-submit-calc" data-track="quote-calculator-submit">
-          💬 Get WhatsApp Quote ⚡
+          <span class="ic ic-whatsapp" aria-hidden="true"></span> Get WhatsApp Quote
         </button>
       </form>
     </div>
@@ -442,42 +453,42 @@
 
       <div class="services-grid">
         <div class="service-card reveal">
-          <div class="service-icon">🔋</div>
+          <div class="service-icon"><span class="ic ic-battery" aria-hidden="true"></span></div>
           <h3>Hybrid Battery Replacement</h3>
           <p>A+ grade lithium and NiMH battery replacement for all hybrid models available in Pakistan. Genuine imported cells with full diagnostic testing.</p>
           <a href="/hybrid-battery-price-karachi/" class="service-link">See 2026 Price List →</a>
         </div>
 
         <div class="service-card reveal">
-          <div class="service-icon">⚡</div>
+          <div class="service-icon"><span class="ic ic-bolt" aria-hidden="true"></span></div>
           <h3>Lithium Battery Upgrade</h3>
           <p>Upgrade your hybrid from NiMH to advanced lithium technology. Better performance, longer life, and significantly improved fuel efficiency.</p>
           <span class="service-link">5-Year Warranty Included →</span>
         </div>
 
         <div class="service-card reveal">
-          <div class="service-icon">🛞</div>
+          <div class="service-icon"><span class="ic ic-disc" aria-hidden="true"></span></div>
           <h3>ABS System Repair</h3>
           <p>Complete ABS diagnostics, sensor replacement, module repair, and brake system calibration. Home service available across Karachi.</p>
           <a href="/abs-repair-karachi/" class="service-link">ABS Repair Details →</a>
         </div>
 
         <div class="service-card reveal">
-          <div class="service-icon">🔧</div>
+          <div class="service-icon"><span class="ic ic-wrench" aria-hidden="true"></span></div>
           <h3>Hybrid System Diagnostics</h3>
           <p>Advanced computer diagnostics to identify hybrid system faults, battery health analysis, and preventive maintenance checks.</p>
           <span class="service-link">Free Diagnostic Check →</span>
         </div>
 
         <div class="service-card reveal">
-          <div class="service-icon">🏠</div>
+          <div class="service-icon"><span class="ic ic-home" aria-hidden="true"></span></div>
           <h3>Home Service — Karachi</h3>
           <p>We come to your doorstep anywhere in Karachi. Battery replacement, ABS repair, and diagnostics — all at your home or office.</p>
           <span class="service-link">Schedule Home Visit →</span>
         </div>
 
         <div class="service-card reveal">
-          <div class="service-icon">🛡️</div>
+          <div class="service-icon"><span class="ic ic-shield" aria-hidden="true"></span></div>
           <h3>5-Year Warranty & Support</h3>
           <p>Industry-leading 5-year official warranty on all batteries. Dedicated customer support and after-sales service you can count on.</p>
           <span class="service-link">Warranty Details →</span>
@@ -685,7 +696,7 @@
 
         <div class="features-list">
           <div class="feature-item reveal">
-            <div class="feature-icon">✅</div>
+            <div class="feature-icon"><span class="ic ic-check" aria-hidden="true"></span></div>
             <div>
               <h4>100% Genuine A+ Grade Batteries</h4>
               <p>Only imported genuine cells — never refurbished. Every battery is tested and comes with a certificate of authenticity.</p>
@@ -693,7 +704,7 @@
           </div>
 
           <div class="feature-item reveal">
-            <div class="feature-icon">🏆</div>
+            <div class="feature-icon"><span class="ic ic-award" aria-hidden="true"></span></div>
             <div>
               <h4>Industry-Leading 5-Year Warranty</h4>
               <p>We stand behind our products with a full 5-year official warranty — the longest in the market. Complete peace of mind.</p>
@@ -701,7 +712,7 @@
           </div>
 
           <div class="feature-item reveal">
-            <div class="feature-icon">🏠</div>
+            <div class="feature-icon"><span class="ic ic-home" aria-hidden="true"></span></div>
             <div>
               <h4>Free Home Service in Karachi</h4>
               <p>Battery replacement, ABS repair, and diagnostics — all at your doorstep. We come to your home or office anywhere in Karachi.</p>
@@ -709,7 +720,7 @@
           </div>
 
           <div class="feature-item reveal">
-            <div class="feature-icon">🚗</div>
+            <div class="feature-icon"><span class="ic ic-car" aria-hidden="true"></span></div>
             <div>
               <h4>All Hybrid Models Covered</h4>
               <p>Toyota, Honda, Nissan, Suzuki, Daihatsu — we stock batteries for virtually every hybrid car available in Pakistan.</p>
@@ -717,7 +728,7 @@
           </div>
 
           <div class="feature-item reveal">
-            <div class="feature-icon">💰</div>
+            <div class="feature-icon"><span class="ic ic-tag" aria-hidden="true"></span></div>
             <div>
               <h4>Affordable & Transparent Pricing</h4>
               <p>No hidden charges. Competitive prices with flexible payment options. WhatsApp us for an instant free quote.</p>
@@ -886,41 +897,41 @@
 
       <div class="locations-grid reveal">
         <div class="location-card">
-          <div class="location-icon">📍</div>
+          <div class="location-icon"><span class="ic ic-pin" aria-hidden="true"></span></div>
           <h4>Workshop Location</h4>
           <p>26th Street, Badar Commercial Area, Defence Phase 5, Karachi</p>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=24.799278,67.047952" target="_blank" rel="noopener" style="display: inline-block; margin-top: 0.5rem; font-size: 0.82rem; color: var(--accent); font-weight: 600;">Get Directions →</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=24.799278,67.047952" target="_blank" rel="noopener" >Get Directions →</a>
         </div>
         <div class="location-card">
-          <div class="location-icon">🏠</div>
+          <div class="location-icon"><span class="ic ic-home" aria-hidden="true"></span></div>
           <h4>Home Service</h4>
           <p>All areas of Karachi</p>
         </div>
         <div class="location-card">
-          <div class="location-icon">🕘</div>
+          <div class="location-icon"><span class="ic ic-clock" aria-hidden="true"></span></div>
           <h4>Working Hours</h4>
           <p>Open 24 Hours, Monday – Sunday</p>
         </div>
         <div class="location-card">
-          <div class="location-icon">📞</div>
+          <div class="location-icon"><span class="ic ic-phone" aria-hidden="true"></span></div>
           <h4>Call / WhatsApp</h4>
           <p><a href="tel:+923082282777" data-track="call-contact-card">0308-2282777</a></p>
         </div>
       </div>
 
       <!-- Workshop Map & Directions -->
-      <div class="map-section reveal" style="margin-bottom: 3.5rem;">
-        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
+      <div class="map-section reveal">
+        <div class="map-head">
           <div>
-            <div style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.35rem;">Live GPS Location</div>
-            <h3 style="font-size: 1.35rem; color: var(--text-primary); margin-bottom: 0.25rem;">Find Us in DHA Phase 5, Karachi</h3>
-            <p style="font-size: 0.88rem; color: var(--text-muted);">26th Street, Badar Commercial Area, Defence Phase 5, Karachi (24.799278, 67.047952)</p>
+            <div class="map-kicker">Live GPS Location</div>
+            <h3>Find Us in DHA Phase 5, Karachi</h3>
+            <p>26th Street, Badar Commercial Area, Defence Phase 5, Karachi (24.799278, 67.047952)</p>
           </div>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=24.799278,67.047952" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.65rem 1.4rem; font-size: 0.88rem; gap: 0.4rem;">
-            🗺️ Get Live Directions
+          <a href="https://www.google.com/maps/dir/?api=1&destination=24.799278,67.047952" target="_blank" rel="noopener" class="btn btn-secondary">
+            <span class="ic ic-map" aria-hidden="true"></span> Get Live Directions
           </a>
         </div>
-        <div style="position: relative; width: 100%; height: 420px; border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border); box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);">
+        <div class="map-frame">
           <iframe 
             src="https://maps.google.com/maps?q=24.799278,67.047952&hl=en&z=17&output=embed" 
             width="100%" 
@@ -939,7 +950,7 @@
         <h2>Ready to Power Up Your Hybrid?</h2>
         <p>Get a free quote today. We offer home battery replacement, ABS repair, and diagnostics anywhere in Karachi — with a 5-year warranty.</p>
         <a href="https://wa.me/923082282777?text=Hi%2C%20I%20want%20a%20free%20hybrid%20battery%20quote%20in%20Karachi" class="btn" id="cta-whatsapp" target="_blank" rel="noopener" data-track="cta-banner-whatsapp">
-          💬 Chat on WhatsApp
+          <span class="ic ic-whatsapp" aria-hidden="true"></span> Chat on WhatsApp
         </a>
       </div>
     </div>
@@ -951,15 +962,15 @@
       <div class="footer-grid">
         <div class="footer-about">
           <a href="#" class="logo" aria-label="SK Hybrid Battery – Home">
-            <div class="logo-icon">⚡</div>
+            <div class="logo-icon"><span class="ic ic-bolt" aria-hidden="true"></span></div>
             SK<span>Hybrid</span>
           </a>
           <p>Karachi's most trusted hybrid battery center. 100% genuine A+ grade batteries for all hybrid cars with an industry-leading 5-year warranty. Free home service across Karachi.</p>
           <div class="footer-social">
-            <a href="#" aria-label="Facebook">📘</a>
-            <a href="#" aria-label="Instagram">📸</a>
-            <a href="#" aria-label="YouTube">📺</a>
-            <a href="https://wa.me/923082282777" aria-label="WhatsApp" target="_blank" rel="noopener">💬</a>
+            <a href="#" aria-label="Facebook"><span class="ic ic-facebook" aria-hidden="true"></span></a>
+            <a href="#" aria-label="Instagram"><span class="ic ic-instagram" aria-hidden="true"></span></a>
+            <a href="#" aria-label="YouTube"><span class="ic ic-youtube" aria-hidden="true"></span></a>
+            <a href="https://wa.me/923082282777" aria-label="WhatsApp" target="_blank" rel="noopener"><span class="ic ic-whatsapp" aria-hidden="true"></span></a>
           </div>
         </div>
 
@@ -991,24 +1002,24 @@
         <div class="footer-column">
           <h4>Contact</h4>
           <ul>
-            <li><a href="tel:+923082282777">📞 0308-2282777</a></li>
-            <li><a href="mailto:info@skhybridbattery.pk">✉️ info@skhybridbattery.pk</a></li>
-            <li><a href="https://www.google.com/maps/dir/?api=1&destination=24.799278,67.047952" target="_blank" rel="noopener">📍 26th Street, Badar Commercial Area, Defence Phase 5, Karachi</a></li>
-            <li><a href="#contact">🕘 Open 24 Hours, Mon–Sun</a></li>
+            <li><a href="tel:+923082282777"><span class="ic ic-phone" aria-hidden="true"></span> 0308-2282777</a></li>
+            <li><a href="mailto:info@skhybridbattery.pk"><span class="ic ic-mail" aria-hidden="true"></span> info@skhybridbattery.pk</a></li>
+            <li><a href="https://www.google.com/maps/dir/?api=1&destination=24.799278,67.047952" target="_blank" rel="noopener"><span class="ic ic-pin" aria-hidden="true"></span> 26th Street, Badar Commercial Area, Defence Phase 5, Karachi</a></li>
+            <li><a href="#contact"><span class="ic ic-clock" aria-hidden="true"></span> Open 24 Hours, Mon–Sun</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
         <p>© 2025 SK Hybrid Battery Karachi. All Rights Reserved.</p>
-        <p>Karachi's #1 Hybrid Battery Service ⚡</p>
+        <p>Karachi's #1 Hybrid Battery Service</p>
       </div>
     </div>
   </footer>
 
   <!-- ==================== WHATSAPP FLOAT ==================== -->
   <a href="https://wa.me/923082282777?text=Hi%2C%20I%20need%20help%20with%20my%20hybrid%20battery%20in%20Karachi" class="whatsapp-float" id="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" data-track="whatsapp-float">
-    💬
+    <span class="ic ic-whatsapp" aria-hidden="true"></span>
   </a>
 
   <!-- ==================== SCROLL TO TOP ==================== -->
@@ -1018,15 +1029,15 @@
   <div class="mobile-action-bar" role="navigation" aria-label="Mobile Quick Actions">
     <div class="mobile-action-bar-inner">
       <a href="tel:+923082282777" class="mobile-action-btn btn-call" data-track="mobile-bar-call">
-        <span class="btn-icon">📞</span>
+        <span class="btn-icon"><span class="ic ic-phone" aria-hidden="true"></span></span>
         <span>Call Now</span>
       </a>
       <a href="https://wa.me/923082282777?text=Hi%20SK%20Hybrid%20Battery%2C%20I%20need%20a%20quote%20for%20my%20hybrid%20car%20in%20Karachi" target="_blank" rel="noopener" class="mobile-action-btn btn-whatsapp" data-track="mobile-bar-whatsapp">
-        <span class="btn-icon">💬</span>
+        <span class="btn-icon"><span class="ic ic-whatsapp" aria-hidden="true"></span></span>
         <span>WhatsApp Quote</span>
       </a>
       <a href="https://www.google.com/maps/dir/?api=1&destination=24.799278,67.047952" target="_blank" rel="noopener" class="mobile-action-btn btn-directions" data-track="mobile-bar-directions">
-        <span class="btn-icon">📍</span>
+        <span class="btn-icon"><span class="ic ic-pin" aria-hidden="true"></span></span>
         <span>Directions</span>
       </a>
     </div>
